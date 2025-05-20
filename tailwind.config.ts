@@ -65,8 +65,12 @@ export default {
 				},
 				theme: {
 					'primary': '#0A192F',
+					'dark-blue': '#071024',
+					'deep-navy': '#020C1B',
 					'secondary': '#112240',
 					'highlight': '#64FFDA',
+					'accent-purple': '#9b87f5',
+					'accent-pink': '#F97AB1',
 					'light-slate': '#A8B2D1',
 					'lightest-slate': '#CCD6F6',
 					'white-heading': '#E6F1FF',
@@ -101,6 +105,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
 			}
 		}
 	},

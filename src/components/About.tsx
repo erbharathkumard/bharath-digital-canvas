@@ -3,14 +3,17 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="section-heading">
+    <section id="about" className="py-20 relative">
+      {/* Background decorative elements */}
+      <div className="absolute -right-20 top-1/3 w-72 h-72 rounded-full bg-theme-accent-purple/5 blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="section-heading animate-slide-up">
           <span className="text-theme-highlight mr-2">01.</span>About Me
         </h2>
         
         <div className="grid md:grid-cols-3 gap-12 items-start">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 animate-slide-in-left">
             <p className="mb-4">
               Hello! I'm Bharath Kumar D, a Computer Science Engineering student pursuing my degree at 
               A.V.C College of Engineering, Mayiladuthurai (affiliated with Anna University) with an expected graduation in 2026.
@@ -32,14 +35,14 @@ const About = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
               {['HTML5', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Bootstrap', 'Java', 'Python', 'MySQL', 'MongoDB', 'Git', 'GitHub'].map((tech, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-theme-highlight mr-2">▹</div>
-                  <span>{tech}</span>
+                <div key={index} className="flex items-center group">
+                  <div className="text-theme-highlight mr-2 transform group-hover:rotate-90 transition-transform duration-300">▹</div>
+                  <span className="group-hover:text-theme-highlight transition-colors duration-300">{tech}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div>
+          <div className="animate-slide-in-right">
             <div className="relative group">
               <div className="w-full h-full rounded-md bg-theme-highlight absolute group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-300 opacity-20"></div>
               <div className="w-full h-full border-2 border-theme-highlight rounded-md overflow-hidden relative z-10">
