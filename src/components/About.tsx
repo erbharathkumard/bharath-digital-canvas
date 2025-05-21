@@ -14,7 +14,7 @@ const About = () => {
           <span className="text-theme-highlight mr-2">01.</span>About Me
         </h2>
         
-        <div className="grid md:grid-cols-1 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="animate-slide-in-left">
             <p className="mb-4">
               Hello! I'm a Computer Science Engineering student pursuing my degree at 
@@ -43,6 +43,25 @@ const About = () => {
                 </div>
               ))}
             </div>
+          </div>
+          
+          <div className="animate-slide-in-right">
+            <Card className="bg-gradient-to-br from-theme-secondary/80 to-theme-secondary/40 backdrop-blur-md overflow-hidden border-theme-highlight/20 hover:border-theme-highlight/50 transition-all duration-500 group">
+              <CardContent className="p-2">
+                <div className="relative overflow-hidden rounded-md">
+                  <img 
+                    src="/lovable-uploads/72569754-c006-4131-b8e8-266f02ce4aee.png" 
+                    alt="Receiving certificate at an event" 
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-theme-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="text-sm text-theme-white-heading">
+                      Receiving certificate at a technical event
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
