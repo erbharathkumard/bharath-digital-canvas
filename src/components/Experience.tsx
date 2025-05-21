@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -61,7 +60,7 @@ const Experience = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
-          <span className="text-theme-highlight mr-2">02.</span>Experience
+          Experience
         </h2>
         
         <div className="max-w-3xl mx-auto animate-scale">

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
@@ -74,7 +73,7 @@ const Contact = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
-          <span className="text-theme-highlight mr-2">05.</span>Contact Me
+          Contact Me
         </h2>
         
         <div className="grid md:grid-cols-2 gap-10">

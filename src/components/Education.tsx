@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, BookOpen, GraduationCap } from 'lucide-react';
 
@@ -34,7 +33,7 @@ const Education = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
-          <span className="text-theme-highlight mr-2">03.</span>Education
+          Education
         </h2>
         
         <div className="max-w-3xl mx-auto">
