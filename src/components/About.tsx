@@ -1,11 +1,14 @@
 
 import React from 'react';
+import { Card, CardContent } from './ui/card';
+import { Avatar, AvatarImage } from './ui/avatar';
 
 const About = () => {
   return (
     <section id="about" className="py-20 relative">
       {/* Background decorative elements */}
-      <div className="absolute -right-20 top-1/3 w-72 h-72 rounded-full bg-theme-accent-purple/5 blur-3xl"></div>
+      <div className="absolute -right-20 top-1/3 w-72 h-72 rounded-full bg-theme-accent-pink/10 blur-3xl"></div>
+      <div className="absolute -left-40 bottom-1/4 w-96 h-96 rounded-full bg-theme-accent-purple/10 blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
@@ -30,7 +33,7 @@ const About = () => {
               I'm always eager to learn new technologies and contribute to innovative projects. When I'm not coding, 
               you can find me collaborating with teams, enhancing my skills, or exploring the latest developments in the tech world.
             </p>
-            <p>
+            <p className="mb-4">
               Here are a few technologies I've been working with recently:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
@@ -44,13 +47,29 @@ const About = () => {
           </div>
           <div className="animate-slide-in-right">
             <div className="relative group">
-              <div className="w-full h-full rounded-md bg-theme-highlight absolute group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-300 opacity-20"></div>
-              <div className="w-full h-full border-2 border-theme-highlight rounded-md overflow-hidden relative z-10">
-                <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                  alt="Bharath Kumar D" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
+              <Card className="bg-gradient-to-br from-theme-secondary/80 to-theme-secondary/40 backdrop-blur-md overflow-hidden border-theme-highlight/20 hover:border-theme-highlight/50 transition-all duration-500">
+                <CardContent className="p-2">
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/1d35d990-42a5-4c79-b342-eaa55a196b34.png" 
+                      alt="Bharath Kumar D receiving an award" 
+                      className="w-full h-auto object-cover rounded-md"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-theme-primary/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="text-sm text-theme-white-heading">
+                        Receiving certificate at the Naan Mudhalvan Hackathon 2025
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="mt-4">
+                <Avatar className="h-20 w-20 mx-auto mb-2 border-2 border-theme-highlight">
+                  <AvatarImage src="https://images.unsplash.com/photo-1472396961693-142e6e269027" alt="Profile Photo" />
+                </Avatar>
+                <p className="text-center text-theme-highlight font-medium">Bharath Kumar D</p>
+                <p className="text-center text-sm text-theme-light-slate">Software Engineering Student</p>
               </div>
             </div>
           </div>

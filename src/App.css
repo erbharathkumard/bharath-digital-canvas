@@ -5,28 +5,28 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 25, 47, 0.5);
+  background: rgba(20, 29, 51, 0.7);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(100, 255, 218, 0.3);
+  background-color: rgba(255, 125, 107, 0.4);
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(100, 255, 218, 0.5);
+  background-color: rgba(255, 125, 107, 0.7);
 }
 
 /* Selection color */
 ::selection {
-  background-color: rgba(100, 255, 218, 0.2);
-  color: #64FFDA;
+  background-color: rgba(255, 125, 107, 0.3);
+  color: #ff7d6b;
 }
 
 /* Focus outline */
 *:focus-visible {
-  outline: 2px solid rgba(100, 255, 218, 0.5);
+  outline: 2px solid rgba(255, 125, 107, 0.6);
   outline-offset: 2px;
 }
 
@@ -54,4 +54,35 @@ html {
   .custom-cursor, .cursor-border {
     display: none !important;
   }
+}
+
+/* Glowing elements */
+.glow-on-hover:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 125, 107, 0.8));
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff7d6b, #F97AB1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Background shapes */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Card hover effects */
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }

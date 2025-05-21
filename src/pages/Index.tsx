@@ -19,7 +19,7 @@ const Index = () => {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: rgba(100, 255, 218, 0.7);
+      background-color: rgba(255, 125, 107, 0.8);
       pointer-events: none;
       z-index: 9999;
       transform: translate(-50%, -50%);
@@ -34,7 +34,7 @@ const Index = () => {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 1px solid rgba(100, 255, 218, 0.3);
+      border: 1px solid rgba(255, 125, 107, 0.4);
       pointer-events: none;
       z-index: 9998;
       transform: translate(-50%, -50%);
@@ -73,6 +73,20 @@ const Index = () => {
       link.addEventListener('mouseenter', enlargeCursor);
       link.addEventListener('mouseleave', resetCursor);
     });
+
+    // Add parallax effect
+    const parallaxElements = document.querySelectorAll('.bg-shape');
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      
+      parallaxElements.forEach(elem => {
+        const speed = parseFloat(elem.getAttribute('data-speed') || '0.1');
+        const x = (mouseX - 0.5) * speed * 100;
+        const y = (mouseY - 0.5) * speed * 100;
+        elem.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
     
     return () => {
       document.removeEventListener('mousemove', updateCursor);
@@ -82,11 +96,16 @@ const Index = () => {
       });
       document.body.removeChild(cursor);
       document.body.removeChild(cursorBorder);
+      window.removeEventListener('mousemove', updateCursor);
     };
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
+      {/* Background shapes */}
+      <div className="fixed top-20 left-20 w-96 h-96 rounded-full bg-theme-accent-purple/5 blur-3xl bg-shape" data-speed="0.05"></div>
+      <div className="fixed bottom-20 right-20 w-96 h-96 rounded-full bg-theme-highlight/5 blur-3xl bg-shape" data-speed="0.08"></div>
+      
       <Header />
       <Hero />
       <About />
