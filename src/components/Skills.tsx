@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const SkillCategory = ({ title, skills, index }: { title: string, skills: { name: string, level: number }[], index: number }) => {
@@ -28,9 +27,6 @@ const SkillCategory = ({ title, skills, index }: { title: string, skills: { name
   return (
     <div className="mb-8 opacity-0" ref={categoryRef} style={{ transitionDelay: `${index * 0.2}s` }}>
       <h3 className="text-theme-white-heading text-xl font-semibold mb-4 flex items-center">
-        <span className="w-6 h-6 rounded-full bg-theme-highlight/20 flex items-center justify-center text-theme-highlight mr-2">
-          {index + 1}
-        </span>
         {title}
       </h3>
       <div className="space-y-4">
@@ -133,7 +129,7 @@ const Skills = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
-          <span className="text-theme-highlight mr-2">04.</span>Skills
+          Skills
         </h2>
         
         <div className="grid md:grid-cols-2 gap-10">

@@ -11,7 +11,7 @@ const About = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="section-heading animate-slide-up">
-          <span className="text-theme-highlight mr-2">01.</span>About Me
+          About Me
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -32,7 +32,7 @@ const About = () => {
               I'm always eager to learn new technologies and contribute to innovative projects. When I'm not coding, 
               you can find me collaborating with teams, enhancing my skills, or exploring the latest developments in the tech world.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 font-medium">
               Here are a few technologies I've been working with recently:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
