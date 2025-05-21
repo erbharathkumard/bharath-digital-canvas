@@ -44,7 +44,7 @@ const Index = () => {
     document.body.appendChild(cursor);
     document.body.appendChild(cursorBorder);
     
-    const updateCursor = (e) => {
+    const updateCursor = (e: MouseEvent) => {
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
       
@@ -80,11 +80,13 @@ const Index = () => {
       const mouseX = e.clientX / window.innerWidth;
       const mouseY = e.clientY / window.innerHeight;
       
-      parallaxElements.forEach(elem => {
-        const speed = parseFloat(elem.getAttribute('data-speed') || '0.1');
-        const x = (mouseX - 0.5) * speed * 100;
-        const y = (mouseY - 0.5) * speed * 100;
-        elem.style.transform = `translate(${x}px, ${y}px)`;
+      parallaxElements.forEach((elem) => {
+        if (elem instanceof HTMLElement) {
+          const speed = parseFloat(elem.getAttribute('data-speed') || '0.1');
+          const x = (mouseX - 0.5) * speed * 100;
+          const y = (mouseY - 0.5) * speed * 100;
+          elem.style.transform = `translate(${x}px, ${y}px)`;
+        }
       });
     });
     
