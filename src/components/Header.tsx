@@ -61,7 +61,7 @@ const Header = () => {
           className="text-theme-highlight font-bold text-xl relative group"
         >
           <span className="text-theme-white-heading group-hover:text-theme-highlight transition-colors duration-300">Bharath</span>
-          <span>Kumar</span>
+          <span> Kumar D</span>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-highlight transition-all duration-300 group-hover:w-full"></span>
         </a>
 
