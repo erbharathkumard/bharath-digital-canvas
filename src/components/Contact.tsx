@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
@@ -41,6 +42,9 @@ const Contact = () => {
       // Simulate API call with timeout
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // Log form data to console for debugging
+      console.log("Form submitted with data:", formData);
+      
       // Success handling
       toast({
         title: "Message Sent!",
@@ -56,6 +60,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Message Failed",
         description: "There was an error sending your message. Please try again.",
@@ -87,8 +92,8 @@ const Contact = () => {
               <ContactItem 
                 icon={<Mail />}
                 title="Email"
-                content="erbharathkumard@gmail.com"
-                link="mailto:erbharathkumard@gmail.com"
+                content="advance@example.com"
+                link="mailto:advance@example.com"
               />
               
               <ContactItem 
@@ -107,15 +112,15 @@ const Contact = () => {
               <ContactItem 
                 icon={<Linkedin />}
                 title="LinkedIn"
-                content="erbharathkumard"
-                link="https://www.linkedin.com/in/erbharathkumard"
+                content="advance"
+                link="https://www.linkedin.com/in/advance"
               />
               
               <ContactItem 
                 icon={<Github />}
-                title="Website"
-                content="erbharathkumard.com"
-                link="https://erbharathkumard.com"
+                title="GitHub"
+                content="advance"
+                link="https://github.com/advance"
               />
             </div>
           </div>
@@ -124,9 +129,10 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6 bg-theme-secondary/50 backdrop-blur-sm rounded-lg p-6 border border-theme-highlight/10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-theme-white-heading mb-2">Name</label>
+                  <label htmlFor="name" className="block text-theme-white-heading mb-2">Name</label>
                   <input 
                     type="text" 
+                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -136,9 +142,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-theme-white-heading mb-2">Email</label>
+                  <label htmlFor="email" className="block text-theme-white-heading mb-2">Email</label>
                   <input 
-                    type="email" 
+                    type="email"
+                    id="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -150,9 +157,10 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-theme-white-heading mb-2">Subject</label>
+                <label htmlFor="subject" className="block text-theme-white-heading mb-2">Subject</label>
                 <input 
-                  type="text" 
+                  type="text"
+                  id="subject" 
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
@@ -163,8 +171,9 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-theme-white-heading mb-2">Message</label>
+                <label htmlFor="message" className="block text-theme-white-heading mb-2">Message</label>
                 <textarea 
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -177,7 +186,7 @@ const Contact = () => {
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="bg-transparent border border-theme-highlight text-theme-highlight px-6 py-3 rounded-md relative overflow-hidden group transition-all duration-300 hover:bg-theme-highlight hover:text-theme-primary hover:bg-opacity-20 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="bg-transparent border border-theme-highlight text-theme-highlight px-6 py-3 rounded-md relative overflow-hidden group transition-all duration-300 hover:bg-theme-highlight hover:text-theme-primary hover:bg-opacity-20 disabled:opacity-60 disabled:cursor-not-allowed w-full md:w-auto"
               >
                 <span className="absolute inset-0 w-0 bg-theme-highlight bg-opacity-10 transition-all duration-500 ease-out group-hover:w-full"></span>
                 <span className="relative flex items-center justify-center">

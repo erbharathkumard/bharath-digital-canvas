@@ -17,7 +17,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="animate-slide-in-left">
             <p className="mb-4">
-              Hello! I'm a Computer Science Engineering student pursuing my degree at 
+              Hello! I'm Advance, a Computer Science Engineering student pursuing my degree at 
               A.V.C College of Engineering, Mayiladuthurai (affiliated with Anna University) with an expected graduation in 2026.
             </p>
             <p className="mb-4">
