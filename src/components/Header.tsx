@@ -76,7 +76,7 @@ const Header = () => {
                     href={link.href} 
                     className={`nav-link ${isActive ? 'text-theme-highlight' : ''}`}
                   >
-                    <span className="text-theme-highlight mr-1">{index + 1}.</span> {link.name}
+                    {link.name}
                     {isActive && (
                       <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-highlight"></span>
                     )}
@@ -120,7 +120,7 @@ const Header = () => {
                         className={`nav-link text-lg block ${isActive ? 'text-theme-highlight' : ''}`}
                         onClick={toggleMenu}
                       >
-                        <span className="text-theme-highlight mr-1">{index + 1}.</span> {link.name}
+                        {link.name}
                       </a>
                     </li>
                   );
