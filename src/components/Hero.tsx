@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
           <p className="text-theme-highlight mb-5 animate-slide-up typing-text opacity-0 transition-all duration-500" style={{ transitionDelay: '0.2s' }}>
-            Hi, my name is
+            Myself
           </p>
           <h1 className="text-4xl md:text-7xl font-bold mb-4 animate-slide-up typing-text opacity-0 transition-all duration-500 gradient-text" style={{ transitionDelay: '0.4s' }}>
             Bharath Kumar D.
