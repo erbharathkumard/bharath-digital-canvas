@@ -1,6 +1,10 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Button } from './ui/button';
 
 const ContactItem = ({ icon, title, content, link = "" }) => (
   <a 
@@ -37,6 +41,9 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Log the form data to verify it's being collected correctly
+    console.log("Form submitted with data:", formData);
+    
     try {
       // Simulate API call with timeout
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -56,6 +63,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Message Failed",
         description: "There was an error sending your message. Please try again.",
@@ -113,9 +121,9 @@ const Contact = () => {
               
               <ContactItem 
                 icon={<Github />}
-                title="Website"
-                content="erbharathkumard.com"
-                link="https://erbharathkumard.com"
+                title="GitHub"
+                content="erbharathkumard"
+                link="https://github.com/erbharathkumard"
               />
             </div>
           </div>
@@ -125,7 +133,7 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-theme-white-heading mb-2">Name</label>
-                  <input 
+                  <Input 
                     type="text" 
                     name="name"
                     value={formData.name}
@@ -137,7 +145,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="block text-theme-white-heading mb-2">Email</label>
-                  <input 
+                  <Input 
                     type="email" 
                     name="email"
                     value={formData.email}
@@ -151,7 +159,7 @@ const Contact = () => {
               
               <div>
                 <label className="block text-theme-white-heading mb-2">Subject</label>
-                <input 
+                <Input 
                   type="text" 
                   name="subject"
                   value={formData.subject}
@@ -164,26 +172,26 @@ const Contact = () => {
               
               <div>
                 <label className="block text-theme-white-heading mb-2">Message</label>
-                <textarea 
+                <Textarea 
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   className="w-full bg-theme-primary/70 border border-gray-700 rounded-lg p-3 text-theme-light-slate focus:outline-none focus:border-theme-highlight transition-colors duration-300 min-h-[150px] resize-none"
                   placeholder="Your message here..."
-                ></textarea>
+                />
               </div>
               
-              <button 
+              <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="bg-transparent border border-theme-highlight text-theme-highlight px-6 py-3 rounded-md relative overflow-hidden group transition-all duration-300 hover:bg-theme-highlight hover:text-theme-primary hover:bg-opacity-20 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full md:w-auto bg-transparent border border-theme-highlight text-theme-highlight px-6 py-3 rounded-md relative overflow-hidden group transition-all duration-300 hover:bg-theme-highlight hover:text-theme-primary hover:bg-opacity-20 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <span className="absolute inset-0 w-0 bg-theme-highlight bg-opacity-10 transition-all duration-500 ease-out group-hover:w-full"></span>
                 <span className="relative flex items-center justify-center">
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </span>
-              </button>
+              </Button>
             </form>
           </div>
         </div>
